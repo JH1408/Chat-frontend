@@ -29,11 +29,11 @@ const Chat = (props) => {
     if(!isEditing) {
       scrollToBottom();
     }
-  }, [comments])
+  }, [comments, isEditing])
 
   useInterval(() => {
     getComments();
-  }, 5000);
+  }, 2000);
 
   const checkUser = () => {
     const username = localStorage.getItem('user');
@@ -72,6 +72,12 @@ const Chat = (props) => {
       setInputValue('');
     })
     .catch(err => setIsError(true))
+  }
+
+  const enterHandler = (e) => {
+    if(e.which === 13) {
+      submitHandler(e);
+    }
   }
 
   const deleteHandler = (id) => {
@@ -147,7 +153,8 @@ const Chat = (props) => {
           placeholder="Send a message"
           value={inputValue}
           onChange={inputChangedHandler}
-          className={classes.messageInput}/>
+          className={classes.messageInput}
+          onKeyDown={enterHandler}/>
         <button onClick={submitHandler}>Send</button>
       </div>
     </div>

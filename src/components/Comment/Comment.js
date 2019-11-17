@@ -4,7 +4,8 @@ import classes from './Comment.module.scss';
 const Comment = (props) => {
   const form = (
     <form>
-      <textarea value={props.commentValue ? props.commentValue : props.comment} onChange={props.changed}/>
+      <textarea value={props.commentValue ? props.commentValue : props.comment}
+        onChange={props.changed}/>
       <button onClick={(e) => props.save(e, props.id, props.user)}>Save</button>
     </form>
   )
