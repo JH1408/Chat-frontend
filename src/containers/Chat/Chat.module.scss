@@ -1,0 +1,60 @@
+@import '../../variables.scss';
+
+.Chat {
+  background-color: lighten($purple, 23%);
+  padding: 20px 0 40px;
+  h1 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .error {
+    color: $error;
+    font-style: italic;
+    font-weight: $regular;
+    text-align: center;
+  }
+}
+
+.commentList {
+  height: calc(100vh - 100px - 120px);
+  overflow-y: scroll;
+  padding: 20px 40px;
+}
+
+.inputContainer {
+  background-color: $background;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 40px;
+  textarea {
+    padding: 20px;
+    overflow-y: auto;
+    width: 90%;
+    border: 1px solid $purple;
+    border-radius: 5px;
+  }
+  button {
+    width: 120px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: lighten($purple, 20%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
