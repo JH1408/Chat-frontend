@@ -20,7 +20,7 @@ const Comment = (props) => {
         {props.editing && props.id === props.edited ? form : <p>{props.comment}</p>}
       </div>
       <div className={classes.edit}>
-        <span onClick={() => props.edit(props.id, props.comment)}>Edit</span>
+        <span onClick={() => props.edit(props.id)}>Edit</span>
         <span onClick={() => props.delete(props.id)}>Delete</span>
       </div>
       <hr/>

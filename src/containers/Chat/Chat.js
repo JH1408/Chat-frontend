@@ -82,13 +82,14 @@ const Chat = (props) => {
 
   const deleteHandler = (id) => {
     setIsError(false);
+    setIsEditing(false);
     axios.delete(`/comment/${id}`)
     .then(res => getComments())
     .catch(err => setIsError(true));
   }
 
-  const editHandler = (id, comment) => {
-    setEditedComment(id)
+  const editHandler = (id) => {
+    setEditedComment(id);
     setIsEditing(true);
   }
 
@@ -120,7 +121,7 @@ const Chat = (props) => {
        }, 1000);
   }
 
-  const commentList = comments !== null? comments.map(comment => {
+  const commentList = comments !== null ? comments.map(comment => {
     const date = moment(comment.dateAdded).format('MMMM Do YYYY, h:mm a')
     return (
       <Comment
