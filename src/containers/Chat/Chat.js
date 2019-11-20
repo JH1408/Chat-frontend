@@ -107,6 +107,7 @@ const Chat = (props) => {
     .then(res => {
       setIsEditing(false);
       getComments();
+      setCommentValue('');
     })
     .catch(err => setIsError(true));
   }
