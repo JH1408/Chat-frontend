@@ -1,7 +1,7 @@
 ## Chat App
 
 ## Overview
-This project is a simple frontend for a chat app with a REST API as backend.
+This project is a simple frontend for a chat app with a REST API as backend. It was a task for a job interview at Snapboard.io.
 
 ## Run the project
 - Clone this project
